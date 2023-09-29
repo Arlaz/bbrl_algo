@@ -111,8 +111,8 @@ class MazeMDPContinuousWrapper(gym.Wrapper):
         # By contrast with the wrapped environment where the state space is discrete
         return True
 
-    def reset(self):
-        obs = self.env.reset()
+    def reset(self, **kwargs):
+        obs = self.env.reset(**kwargs)
         x = self.env.coord_x[obs]
         y = self.env.coord_y[obs]
         xc = x + random.random()
